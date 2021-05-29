@@ -4,6 +4,9 @@ const sequelize = require('../config/connection');
 
 class ProductTag extends Model {}
 
+// This is a third table for the many-to-many relationships of products and tags
+// A product can have many tags and a tag can have many products
+
 ProductTag.init(
   {
   	//ProductTag`
