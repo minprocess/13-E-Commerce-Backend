@@ -8,10 +8,12 @@ router.get('/', async (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
   try {
+
     const prodData = await Product.findAll({
       // Add Category and Tag as second and third models to JOIN with
       include: [{ model: Category }, { model: Tag }],
     });
+
     res.status(200).json(prodData);
   } catch (err) {
     res.status(500).json(err);
