@@ -8,9 +8,10 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Product data
 
   try {
+    // https://bezkoder.com/sequelize-associate-many-to-many/
     const tagData = await Tag.findAll({
       // Add Product as a second model to JOIN with
-      include: [{ model: Product }],
+      include: [{ model: Product, as: "products" }],
     });
     res.status(200).json(tagData);
   } catch (err) {
@@ -24,7 +25,7 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Product data
   try {
     const tagData = await Tag.findByPk(req.params.id, {
-      include: [{ model: Product }],
+      include: [{ model: Product, as: "products" }],
     });
 
     if (!tagData) {
@@ -32,7 +33,7 @@ router.get('/:id', async (req, res) => {
       return;
     }
 
-    res.status(200).json(catData);
+    res.status(200).json(tagData);
   } catch (err) {
     res.status(500).json(err);
   }
