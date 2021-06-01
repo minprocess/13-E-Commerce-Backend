@@ -22,6 +22,52 @@ Category.hasMany(Product, {
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
   // Define the third table needed to store the foreign keys
+  through: 'product_tag',
+  // Define an alias for when data is retrieved
+  as: 'tags',
+  foreignKey: 'product_id'
+});
+
+/*
+
+https://medium.com/@tonyangelo9707/many-to-many-associations-using-sequelize-941f0b6ac102
+
+
+Tutorial.belongsToMany(Tag, {
+  through: "tutorial_tag",
+  as: "tags",
+  foreignKey: "tutorial_id",
+});
+
+Tag.belongsToMany(Tutorial, {
+  through: "tutorial_tag",
+  as: "tutorials",
+  foreignKey: "tag_id",
+});
+
+Product.belongsToMany(Tag, {
+  // Define the third table needed to store the foreign keys
+  through: 'ProductTag',
+  // Define an alias for when data is retrieved
+  as: 'products',
+  foreignKey: 'product_id',
+  otherKey: 'tag_id'
+});
+
+
+Product.associate = function(models) {
+  Product.belongsToMany(models.Order, {
+    through: 'ProductOrders',
+    as: 'orders',
+    foreignKey: 'productId',
+    otherKey: 'orderId'
+  });
+};
+// The foreignKey and otherKey are not required and can be create by default but I like adding them anyway so I can change the names.
+
+
+Product.belongsToMany(Tag, {
+  // Define the third table needed to store the foreign keys
   through: {
     model: ProductTag,
     unique: false
@@ -30,16 +76,51 @@ Product.belongsToMany(Tag, {
   as: 'products_for_a_tag'
 });
 
+
+
+*/
+
+
+
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
   // Define the third table needed to store the foreign keys
+  through: 'product_tag',
+  as: 'products',
+  foreignKey: 'tag_id'
+});
+
+
+/*
+
+https://medium.com/@tonyangelo9707/many-to-many-associations-using-sequelize-941f0b6ac102
+
+
+Tag.belongsToMany(Product, {
+  // Define the third table needed to store the foreign keys
   through: {
-    model: ProductTag,
+    model: 'ProductTag',
     unique: false
   },
   // Define an alias for when data is retrieved
   as: 'tags_for_a_product'
 });
+
+
+Order.associate = function(models) {
+  Order.belongsToMany(models.Product, {
+    through: 'ProductOrders',
+    as: 'products',
+    foreignKey: 'orderId',
+    otherKey: 'productId'
+  });
+};
+
+
+
+*/
+
+
 
 module.exports = {
   Product,

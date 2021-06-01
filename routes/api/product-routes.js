@@ -11,8 +11,9 @@ router.get('/', async (req, res) => {
 
     const prodData = await Product.findAll({
       // Add Category and Tag as second and third models to JOIN with
-      include: [{ model: Category }, { model: Tag }],
+      include: [{ model: Category }, { model: Tag, as: "tags"}],
     });
+//    include: [{ model: Category }, { model: Tag, through: ProductTag}],
 
     res.status(200).json(prodData);
   } catch (err) {
@@ -20,6 +21,12 @@ router.get('/', async (req, res) => {
   }
 
 });
+
+/*
+      model: Tutorial,
+      as: "tutorials",
+*/
+
 
 // get one product
 router.get('/:id', async (req, res) => {
