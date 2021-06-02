@@ -43,6 +43,11 @@ https://frozen-plains-09933.herokuapp.com/api/categoriesgit /
 https://frozen-plains-09933.herokuapp.com/api/products/
 https://frozen-plains-09933.herokuapp.com/api/tags/
 
+The following mp4 file is a video of several api operations in Insomnia
+(https://github.com/minprocess/13-E-Commerce-Backend/blob/main/video/demonstration_of_backend_on_heroku_using_insomnia.mp4)
+
+
+
 # <Your-Project-Title>
 ## Description
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
