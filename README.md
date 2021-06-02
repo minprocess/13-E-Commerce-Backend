@@ -39,7 +39,7 @@ To seed the database on Heroku use this command
 `heroku run node seeds/index.js`
 
 Insomnia can be used to perform CRUD operations with the database. Below are the 3 routes that can be used in Insomnia
-https://frozen-plains-09933.herokuapp.com/api/categories/
+https://frozen-plains-09933.herokuapp.com/api/categoriesgit /
 https://frozen-plains-09933.herokuapp.com/api/products/
 https://frozen-plains-09933.herokuapp.com/api/tags/
 
