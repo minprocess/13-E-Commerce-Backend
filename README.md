@@ -1,74 +1,75 @@
 # 13-E-Commerce-Backend
 ## Description
-Backend for an e-commerce website using Sequelize. Database is mySql on localhost and JawsDB on Heroku. The database has 3 tables: Category, Product and Tags. A category can has many products. A product can belong to only one category. Thus there is a one-to-many relationship between categoy and product. A product can have many tags. Thus there is a many-to-many relationship between product and tags.<br>
+This project is a server/backend for a ficticious e-commerce website using Sequelize. The database is mySql on localhost and JawsDB on Heroku. The database has 3 tables: Category, Product and Tag. A category can have many products (one-to-many). A product can belong to only one category. A product can have many tags (many-to-many).
 
+The api routes can be tested with Insomnia. The following mp4 file is a video of several api operations in Insomnia.  
+(https://github.com/minprocess/13-E-Commerce-Backend/blob/main/video/demonstration_of_backend_on_heroku_using_insomnia.mp4)  
+Note that the video is in a folder names Video.
 
-Deployment to Heroku
+Most of the code was written by the company that runs the Univeristy of Pennsylvania coding boot camp.
+
+This app was deployment to Heroku as the following  
 https://frozen-plains-09933.herokuapp.com/
 
+The mySQL and JawsDB databases can be seeded with this app. See the Usage section below.
 
-PS C:\Users\wtpat\repos\Homework\13-E-Commerce-Backend> git remote -v
-heroku  https://git.heroku.com/frozen-plains-09933.git (fetch)
-heroku  https://git.heroku.com/frozen-plains-09933.git (push)
-origin  git@github.com:minprocess/13-E-Commerce-Backend.git (fetch)
-origin  git@github.com:minprocess/13-E-Commerce-Backend.git (push)
+On server start the Sequelize models are synced to either the MySQL database or the JawsDB.  
 
-
-https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql
-
-### Seed the Database
-
-After creating the models and routes, run `npm run seed` to seed data to your database so that you can test your routes.
-
-### Sync Sequelize to the Database on Server Start
-
-Create the code needed in `server.js` to sync the Sequelize models to the MySQL database on server start.
-
+## Installation
+This project has repositories on Heroku and on GitHub. The git command to show remote repositories is  
+`git remote -v`  
+Git returned the following  
+```
+heroku  https://git.heroku.com/frozen-plains-09933.git (fetch)  
+heroku  https://git.heroku.com/frozen-plains-09933.git (push)  
+origin  git@github.com:minprocess/13-E-Commerce-Backend.git (fetch)  
+origin  git@github.com:minprocess/13-E-Commerce-Backend.git (push)  
+```
+This project has the following dependencies in `package.json`.
+```
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.7"
+```
 
 ## Usage
-The following commands deploy to Heroku. The heroku CLI has to be deployed to the PC with the project
+The following commands deploy to Heroku. Note that the Heroku CLI has to be installed on the PC with source code for this project.  
 `heroku create`
 `git push heroku main`
 
-Heroku has a JawsDB addon that is mySQL compatible. This backend works with mySQL on the PC used for development or on Heroku.<br>
+This server/backend works with mySQL on the PC used for development or on Heroku.
 
-To seed the database on the development PC use
-`node seeds/index.js`
+To seed the database on the development PC use one of the following commands  
+`node seeds/index.js`  
+`npm start seeds/index.js`
 
-To seed the database on Heroku use this command
+To seed the database on Heroku use this command  
 `heroku run node seeds/index.js`
 
-Insomnia can be used to perform CRUD operations with the database. Below are the 3 routes that can be used in Insomnia
+Insomnia can be used to perform CRUD operations with the database. Below are the 3 routes that can be used in Insomnia  
+```
 https://frozen-plains-09933.herokuapp.com/api/categoriesgit /
 https://frozen-plains-09933.herokuapp.com/api/products/
 https://frozen-plains-09933.herokuapp.com/api/tags/
-
-The following mp4 file is a video of several api operations in Insomnia
+```
+The following mp4 file is a video of several api operations in Insomnia  
 (https://github.com/minprocess/13-E-Commerce-Backend/blob/main/video/demonstration_of_backend_on_heroku_using_insomnia.mp4)
 
 
+| SQL | Method | API | Data |
+| --- | --- | --- | --- |
+| Read categories | GET | https://frozen-plains-09933.herokuapp.com/api/categories |  |
+Create a category | POST | https://frozen-plains-09933.herokuapp.com/api/categories | { "category_name":"Sports" } |
+| Read products | GET | https://frozen-plains-09933.herokuapp.com/api/products |   |
+| Create a product | POST | https://frozen-plains-09933.herokuapp.com/api/products | { "product_name":"Basketball", "price":200.00, "stock":3, "category_id":6, "tagIds":[1,2]} |
+| Update a product | PUT | https://frozen-plains-09933.herokuapp.com/api/products/6 | { "tagIds":[3,4] }} |
+| Delete a prodUct | DELETE | https://frozen-plains-09933.herokuapp.com/api/products/6 |   |
 
-# <Your-Project-Title>
-## Description
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-## Table of Contents (Optional)
-If your README is long, add a table of contents to make it easy for users to find what they need.
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-## Installation
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-## Usage
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+
+```
+![alt text](assets/images/screenshot.png)
+```
 ## Credits
 List your collaborators, if any, with links to their GitHub profiles.
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
