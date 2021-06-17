@@ -9,7 +9,7 @@ Note that the video is in a folder names Video.
 Most of the code was written by the company that runs the Univeristy of Pennsylvania coding boot camp.
 
 This app was deployment to Heroku as the following  
-https://frozen-plains-09933.herokuapp.com/
+https://ecomm-backend-2542.herokuapp.com/
 
 The mySQL and JawsDB databases can be seeded with this app. See the Usage section below.
 
@@ -20,8 +20,8 @@ This project has repositories on Heroku and on GitHub. The git command to show r
 `git remote -v`  
 Git returned the following  
 ```
-heroku  https://git.heroku.com/frozen-plains-09933.git (fetch)  
-heroku  https://git.heroku.com/frozen-plains-09933.git (push)  
+heroku  https://git.heroku.com/ecomm-backend-2542.git (fetch)  
+heroku  https://git.heroku.com/ecomm-backend-2542.git (push)  
 origin  git@github.com:minprocess/13-E-Commerce-Backend.git (fetch)  
 origin  git@github.com:minprocess/13-E-Commerce-Backend.git (push)  
 ```
@@ -51,9 +51,9 @@ To start this server on Heroku, click the Start App button in the page f
 
 Insomnia can be used to perform CRUD operations with the database. Below are the 3 routes that can be used in Insomnia  
 ```
-https://frozen-plains-09933.herokuapp.com/api/categoriesgit /
-https://frozen-plains-09933.herokuapp.com/api/products/
-https://frozen-plains-09933.herokuapp.com/api/tags/
+https://ecomm-backend-2542.herokuapp.com/api/categoriesgit /
+https://ecomm-backend-2542.herokuapp.com/api/products/
+https://ecomm-backend-2542.herokuapp.com/api/tags/
 ```
 The following mp4 file is a video of several api operations in Insomnia  
 (https://github.com/minprocess/13-E-Commerce-Backend/blob/main/video/demonstration_of_backend_on_heroku_using_insomnia.mp4)
@@ -61,12 +61,12 @@ The following mp4 file is a video of several api operations in Insomnia
 
 | SQL | Method | API | Data |
 | --- | --- | --- | --- |
-| Read categories | GET | https://frozen-plains-09933.herokuapp.com/api/categories |  |
-Create a category | POST | https://frozen-plains-09933.herokuapp.com/api/categories | { "category_name":"Sports" } |
-| Read products | GET | https://frozen-plains-09933.herokuapp.com/api/products |   |
-| Create a product | POST | https://frozen-plains-09933.herokuapp.com/api/products | { "product_name":"Basketball", "price":200.00, "stock":3, "category_id":6, "tagIds":[1,2]} |
-| Update a product | PUT | https://frozen-plains-09933.herokuapp.com/api/products/6 | { "tagIds":[3,4] }} |
-| Delete a product | DELETE | https://frozen-plains-09933.herokuapp.com/api/products/6 |   |
+| Read categories | GET | https://ecomm-backend-2542.herokuapp.com/api/categories |  |
+Create a category | POST | https://ecomm-backend-2542.herokuapp.com/api/categories | { "category_name":"Sports" } |
+| Read products | GET | https://ecomm-backend-2542.herokuapp.com/api/products |   |
+| Create a product | POST | https://ecomm-backend-2542.herokuapp.com/api/products | { "product_name":"Basketball", "price":200.00, "stock":3, "category_id":6, "tagIds":[1,2]} |
+| Update a product | PUT | https://ecomm-backend-2542.herokuapp.com/api/products/6 | { "tagIds":[3,4] }} |
+| Delete a product | DELETE | https://ecomm-backend-2542.herokuapp.com/api/products/6 |   |
 
 <br><br>
 The figure belows shows what the Heroku web page for this ecommerce server looks like.  
