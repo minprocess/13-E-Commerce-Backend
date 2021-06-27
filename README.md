@@ -51,11 +51,11 @@ To start this server on Heroku, click the Start App button in the page f
 
 Insomnia can be used to perform CRUD operations with the database. Below are the 3 routes that can be used in Insomnia  
 ```
-https://ecomm-backend-2542.herokuapp.com/api/categoriesgit /
+https://ecomm-backend-2542.herokuapp.com/api/categories/
 https://ecomm-backend-2542.herokuapp.com/api/products/
 https://ecomm-backend-2542.herokuapp.com/api/tags/
 ```
-The following mp4 file is a video of several api operations in Insomnia  
+The following mp4 file in the GitHub repo is a video of several api operations in Insomnia  
 (https://github.com/minprocess/13-E-Commerce-Backend/blob/main/video/demonstration_of_backend_on_heroku_using_insomnia.mp4)
 
 
@@ -71,11 +71,11 @@ Create a category | POST | https://ecomm-backend-2542.herokuapp.com/api/categori
 <br><br>
 The figure belows shows what the Heroku web page for this ecommerce server looks like.  
 
-![Heroku web page for this ecommerce server](assets/Heroku_web_page_for_this_app.png)
+![Heroku web page for this ecommerce server](./assets/Heroku_web_page_for_this_app.png)
 <br>
 <br>
 The figure below shows what the Insomnia interface looks like with saved requests in the left hand panel, an api request in the middle and the result in the right hand panel.  
-![What the Insomnia interface looks like with a request and the returned api](assets/Insomnia_requests_for_backend_on_Heroku.png)
+![What the Insomnia interface looks like with a request and the returned api](./assets/Insomnia_requests_for_backend_on_Heroku.png)
 
 ## Credits
 Most of the code was written by the company that runs the Univeristy of Pennsylvania coding boot camp. The routes and models were written by me with help from comments in the js files.
